@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.container {
+  text-align: center;
+}
+
+.hero {
+  background: #111;
+  color: #fff;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background: #00a86b;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.services h2,
+.clients h2,
+.trust h2,
+.case-studies h2,
+.contact h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.service-grid div {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.clients ul,
+.trust ul,
+.case-studies ul {
+  list-style: none;
+  padding: 0;
+}
+
+.clients ul li,
+.trust ul li,
+.case-studies ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.clients .quote {
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+}
+
+.contact form {
+  display: grid;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact button {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact button {
+  background: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-content a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 8px;
+}
+
+.referral-note {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
