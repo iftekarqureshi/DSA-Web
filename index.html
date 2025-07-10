@@ -2,103 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strategic Loan Advisory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Become a Partner | Strategic Loan Advisory</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">LoanAdvisory</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#process">Process</a>
+        <a href="#form">Apply</a>
+      </nav>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
+      <h1>Join Our Private Network of Loan Partners</h1>
+      <p>Exclusive referral collaboration to help HNIs & business families secure ₹5Cr+ loans privately and profitably.</p>
+      <button class="btn" onclick="scrollToSection('benefits')">Discover Benefits</button>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="benefits-section">
     <div class="container">
-      <h1>Strategic loan advisory for the top 1%.</h1>
-      <p>We help HNIs and business families structure and secure ₹5Cr+ loans — privately, precisely, and with zero noise.</p>
-      <button onclick="scrollToForm()">🗓️ Book a Private Consultation</button>
-    </div>
-  </section>
-
-  <!-- What We Do -->
-  <section class="services">
-    <h2>Bespoke capital solutions for complex needs.</h2>
-    <div class="service-grid">
-      <div>
-        <h3>Home Loans (₹5Cr+)</h3>
-        <p>New purchases, balance transfers, builder buyouts</p>
-      </div>
-      <div>
-        <h3>Loan Against Property (₹2Cr+)</h3>
-        <p>For liquidity, expansion, or consolidation</p>
-      </div>
-      <div>
-        <h3>Structured Loans</h3>
-        <p>Cross-collateral, HUFs, NRIs, multiple borrowers</p>
-      </div>
-      <div>
-        <h3>Advisory Only</h3>
-        <p>Independent second-opinion on rates, terms, or banker proposals</p>
+      <h2>Why Partner With Us?</h2>
+      <div class="benefit-cards">
+        <div class="card">
+          <h3>Competitive Referral Fee</h3>
+          <p>Attractive commissions on every closing above ₹5Cr.</p>
+        </div>
+        <div class="card">
+          <h3>White‑Label Support</h3>
+          <p>Co-branded collateral and seamless client communication.</p>
+        </div>
+        <div class="card">
+          <h3>Dedicated Back‑Office</h3>
+          <p>Full assistance from documentation to disbursal—no hassles.</p>
+        </div>
+        <div class="card">
+          <h3>Trusted Expertise</h3>
+          <p>Ex-bankers with ₹1000Cr+ handled, over 30 lender relationships.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Who We Serve -->
-  <section class="clients">
-    <h2>We work with people who think in balance sheets, not EMIs.</h2>
-    <ul>
-      <li>Business owners & startup founders</li>
-      <li>Real estate investors & developers</li>
-      <li>Doctors, lawyers, and CAs</li>
-      <li>HNIs with complex financial structures</li>
-      <li>Family offices & NRI buyers</li>
-    </ul>
-    <p class="quote">“Our clients don’t walk into banks. They get it done over one call.”</p>
+  <!-- Process -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <h2>Our 3‑Step Partner Process</h2>
+      <ol class="process-steps">
+        <li><strong>1. Sign Up</strong> – Fill a quick partner-form below.</li>
+        <li><strong>2. Get Activation</strong> – Receive your unique partner code & branded support kit.</li>
+        <li><strong>3. Close & Earn</strong> – Refer & earn commissions on each ₹5Cr+ deal closed.</li>
+      </ol>
+    </div>
   </section>
 
-  <!-- Why Us -->
-  <section class="trust">
-    <h2>Ex-bankers. Now on your side.</h2>
-    <p>We’ve spent over a decade inside top institutions like HDFC and Deutsche Bank — closing hundreds of crores in high-ticket loans.<br>Now, we work for you. Quietly. Strategically. Without sales pressure.</p>
-    <ul class="badges">
-      <li>✅ ₹1000Cr+ of loans handled</li>
-      <li>✅ Deep networks across 30+ lenders</li>
-      <li>✅ Discreet, white-glove execution</li>
-      <li>✅ Legal, valuation & documentation support</li>
-    </ul>
-  </section>
-
-  <!-- Sample Case Studies -->
-  <section class="case-studies">
-    <h2>Real stories. Real discretion.</h2>
-    <ul>
-      <li>“Helped an NRI family close a ₹10Cr property deal in 72 hours.”</li>
-      <li>“Restructured ₹15Cr loan across 3 banks and 2 properties.”</li>
-      <li>“Advised a family office on ₹50Cr debt stack for real estate expansion.”</li>
-    </ul>
-  </section>
-
-  <!-- Book a Private Call -->
-  <section class="contact" id="contactForm">
-    <h2>Let’s discuss your borrowing needs — privately.</h2>
-    <p>We work by referral. But if you’re exploring a large-ticket loan or want a second opinion on your current offer — we’re happy to help.</p>
-    <form>
-      <input type="text" placeholder="Name" required>
-      <input type="tel" placeholder="Phone" required>
-      <input type="email" placeholder="Email (optional)">
-      <input type="text" placeholder="Loan Type" required>
-      <input type="text" placeholder="Estimated Loan Size" required>
-      <input type="text" placeholder="Preferred Time to Talk" required>
-      <button type="submit">🗓️ Schedule a Call</button>
-    </form>
+  <!-- Application Form -->
+  <section id="form" class="apply-section">
+    <div class="container">
+      <h2>Apply to Become a Partner</h2>
+      <form id="partnerForm" class="apply-form" onsubmit="submitForm(event)">
+        <input type="text" placeholder="Full Name" name="name" required>
+        <input type="email" placeholder="Email Address" name="email" required>
+        <input type="tel" placeholder="Phone Number" name="phone" required>
+        <textarea name="notes" placeholder="Tell us about your network / organization (optional)"></textarea>
+        <button type="submit" class="btn">Submit Application</button>
+      </form>
+      <p id="formMsg" class="form-message"></p>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>© 2025 Strategic Loan Advisory</p>
-      <p><a href="#">About</a> | <a href="#">Privacy & Disclaimer</a></p>
-      <div class="social-icons">
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" /></a>
-        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
-      </div>
-      <p class="referral-note">By Referral Only</p>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Strategic Loan Advisory • <a href="#">Privacy & Disclaimer</a></p>
+      <p>Connect: <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
+                   <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon"></a></p>
+      <p class="ref-note">By Referral Only • Private Partner Network</p>
     </div>
   </footer>
 
