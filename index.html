@@ -19,6 +19,10 @@
     .text-primary {
       color: var(--primary-blue);
     }
+    footer {
+      position: sticky;
+      top: 100%;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-lato">
@@ -79,64 +83,46 @@
     </div>
   </section>
 
-  <!-- About Us Section -->
-  <section id="about" class="py-20 bg-white text-primary">
-    <div class="container mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-4">About Us</h2>
-      <p class="text-lg max-w-2xl mx-auto">
-        EBCG is a team of seasoned ex-bankers and financial experts offering bespoke consulting services to high-net-worth clients and enterprises.
-        We are passionate about delivering real value through financial intelligence and proven industry expertise.
-      </p>
-    </div>
-  </section>
+  <!-- Existing Sections (About, Services, Partner, Contact) -->
 
-  <!-- Services Section -->
-  <section id="services" class="py-20 bg-gray-100 text-primary">
-    <div class="container mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-8">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Loan Advisory</h3>
-          <p>Tailored loan structuring and negotiation for individuals and businesses.</p>
+  <!-- Enhanced Footer -->
+  <footer class="bg-primary text-white pt-10 pb-6">
+    <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">EBCG</h3>
+        <p class="text-sm opacity-70">Elite financial consulting services powered by ex-banking professionals.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#about" class="hover:underline">About Us</a></li>
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li><a href="#partner" class="hover:underline">Partner With Us</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:opacity-75"><img src="assets/facebook.svg" alt="Facebook" class="h-6"></a>
+          <a href="#" class="hover:opacity-75"><img src="assets/linkedin.svg" alt="LinkedIn" class="h-6"></a>
+          <a href="#" class="hover:opacity-75"><img src="assets/twitter.svg" alt="Twitter" class="h-6"></a>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Wealth Management</h3>
-          <p>Personalized strategies to help grow and protect your wealth long-term.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Business Consulting</h3>
-          <p>Financial planning and advisory services for SMEs and corporates.</p>
+        <div class="mt-4">
+          <a href="#" class="text-xs underline mr-4">Privacy Policy</a>
+          <a href="#" class="text-xs underline">Terms of Use</a>
         </div>
       </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Newsletter</h4>
+        <form class="flex flex-col">
+          <input type="email" placeholder="Your email" class="p-2 rounded text-primary" required>
+          <button type="submit" class="mt-2 bg-white text-primary py-2 rounded hover:bg-gray-100">Subscribe</button>
+        </form>
+      </div>
     </div>
-  </section>
-
-  <!-- Partner With Us Section -->
-  <section id="partner" class="py-20 bg-primary text-white">
-    <div class="container mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-6">Partner With Us</h2>
-      <p class="text-lg max-w-2xl mx-auto mb-6">
-        Join hands with EBCG to elevate your business with proven financial insight and strategic collaborations. Let’s grow together.
-      </p>
-      <button class="btn-outline border-white text-white hover:bg-white hover:text-primary px-6 py-2">Become a Partner</button>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-100 text-primary">
-    <div class="container mx-auto px-4 md:px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-4">Contact Us</h2>
-      <p class="mb-6">Have questions or need a consultation? Reach out and we’ll get back to you soon.</p>
-      <form class="max-w-xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" placeholder="Full Name" class="p-3 border rounded" required>
-          <input type="email" placeholder="Email Address" class="p-3 border rounded" required>
-        </div>
-        <textarea placeholder="Your Message" class="p-3 border rounded w-full mt-4" rows="4" required></textarea>
-        <button type="submit" class="btn-outline mt-4 border text-primary hover:bg-gray-100 px-6 py-2">Send Message</button>
-      </form>
-    </div>
-  </section>
+    <div class="mt-8 text-center text-sm opacity-60">© 2025 EBCG. All rights reserved.</div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
