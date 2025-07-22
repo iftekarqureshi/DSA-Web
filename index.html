@@ -19,22 +19,6 @@
     .text-primary {
       color: var(--primary-blue);
     }
-    .btn-primary {
-      background-color: var(--primary-blue);
-      color: white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.375rem;
-      font-weight: 600;
-    }
-    .btn-primary:hover {
-      background-color: #2e374f;
-    }
-    .btn-outline {
-      border: 2px solid white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 0.375rem;
-      font-weight: 600;
-    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-lato">
@@ -42,7 +26,7 @@
   <nav class="fixed top-0 w-full bg-white shadow-md z-50 py-4">
     <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
       <a href="#home" class="text-2xl font-bold text-primary flex items-center">
-        <img src="assets/EBCG.png" alt="EBCG Logo" class="h-10 w-10 mr-2 rounded" />
+        <img src="assets/EBCG.png" alt="EBCG Logo" class="h-8 w-8 mr-2" />
         <span class="font-playfair">EBCG</span>
       </a>
 
@@ -52,7 +36,7 @@
         <a href="#services" class="nav-link">Services</a>
         <a href="#partner" class="nav-link">Partner With Us</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <button class="btn-primary ml-4">Request Callback</button>
+        <button class="btn-outline border text-primary hover:bg-gray-100">Request Callback</button>
       </div>
 
       <div class="md:hidden">
@@ -71,7 +55,7 @@
       <a href="#services" class="block py-2 text-primary hover:bg-gray-50">Services</a>
       <a href="#partner" class="block py-2 text-primary hover:bg-gray-50">Partner With Us</a>
       <a href="#contact" class="block py-2 text-primary hover:bg-gray-50">Contact</a>
-      <button class="btn-primary w-full mt-4">Request Callback</button>
+      <button class="btn-outline w-full mt-4 border text-primary hover:bg-gray-100">Request Callback</button>
     </div>
   </nav>
 
@@ -87,12 +71,12 @@
             Exclusive loan consulting services for high-net-worth individuals and businesses seeking sophisticated financial solutions.
           </p>
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <button class="btn-primary bg-white text-primary hover:bg-gray-100">Request Callback</button>
+            <button class="btn-outline border-white text-white hover:bg-white hover:text-primary">Request Callback</button>
             <button class="btn-outline border-white text-white hover:bg-white hover:text-primary">Learn More</button>
           </div>
         </div>
         <div class="md:w-1/2 flex justify-center relative z-10">
-          <img src="assets/EBCG.png" alt="EBCG Logo Hero" class="w-72 h-auto opacity-30 rounded shadow-xl" />
+          <img src="assets/EBCG.png" alt="EBCG Logo Transparent" class="w-80 h-auto opacity-30 rounded-xl shadow-xl mix-blend-soft-light" />
         </div>
       </div>
     </div>
