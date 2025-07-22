@@ -1,29 +1,30 @@
 :root {
-  --primary: #0A1E35; /* deep navy blue from logo */
-  --secondary: #D4AF37; /* optional: gold accent if needed */
-  --cream: #F8F5F0;
+  --primary: #222433; /* dark slate */
+  --secondary: #B4955C; /* muted gold */
+  --background: #FAF9F6; /* pearl white */
 }
+
+/* Background and text helpers */
 .bg-primary {
-  background-color: var(--primary-blue);
+  background-color: var(--primary);
 }
 .text-primary {
-  color: var(--primary-blue);
+  color: var(--primary);
 }
-footer {
-  position: sticky;
-  top: 100%;
+.bg-secondary {
+  background-color: var(--secondary);
 }
-.service-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.text-secondary {
+  color: var(--secondary);
 }
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.bg-pearl {
+  background-color: var(--background);
 }
 
 body {
   font-family: 'Lato', sans-serif;
   color: #333;
+  background-color: var(--background);
   scroll-behavior: smooth;
 }
 
@@ -39,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
 }
 
+/* Buttons */
 .btn-primary {
   background-color: var(--primary);
   color: white;
@@ -50,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background-color: #122B4E;
+  background-color: #1b1d2a;
   transform: translateY(-2px);
 }
 
@@ -70,12 +72,14 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+/* Navigation */
 .nav-link {
   position: relative;
   padding: 0.5rem 0;
   margin: 0 1rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  color: var(--primary);
 }
 
 .nav-link::after {
@@ -91,4 +95,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Footer */
+footer {
+  position: sticky;
+  top: 100%;
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem 0;
+}
+
+/* Card hover effect */
+.service-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
