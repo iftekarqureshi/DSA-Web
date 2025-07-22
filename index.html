@@ -2,103 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Become a Partner | Strategic Loan Advisory</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EBCG - Ex Banker Consulting Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">LoanAdvisory</a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#hero" tabindex="1">Home</a>
-        <a href="#benefits" tabindex="2">Benefits</a>
-        <a href="#process" tabindex="3">Process</a>
-        <a href="#form" tabindex="4">Apply</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle Navigation" id="navButton">☰</button>
-    </div>
-  </header>
+<body class="bg-white text-gray-800 font-lato">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50 py-4">
+    <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <a href="#home" class="text-2xl font-bold text-primary flex items-center">
+        <img src="logo-navbar.png" alt="EBCG Logo" class="h-8 w-8 mr-2" />
+        <span class="font-playfair">EBCG</span>
+      </a>
 
-  <!-- Hero -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-content">
-      <h1>Join Our Private Network of Loan Partners</h1>
-      <p>Exclusive referral collaboration to help HNIs & business families secure ₹5Cr+ loans privately and profitably.</p>
-      <button class="btn" onclick="scrollToSection('benefits')">Discover Benefits</button>
-    </div>
-  </section>
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#partner" class="nav-link">Partner With Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="btn-primary ml-4">Request Callback</button>
+      </div>
 
-  <!-- Benefits -->
-  <section id="benefits" class="benefits-section">
-    <div class="container">
-      <h2>Why Partner With Us?</h2>
-      <div class="benefit-cards">
-        <div class="card" tabindex="0">
-          <h3>Competitive Referral Fee</h3>
-          <p>Attractive commissions on every closing above ₹5Cr.</p>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white w-full py-4 px-6 shadow-md">
+      <a href="#home" class="block py-2 text-primary hover:bg-gray-50">Home</a>
+      <a href="#about" class="block py-2 text-primary hover:bg-gray-50">About Us</a>
+      <a href="#services" class="block py-2 text-primary hover:bg-gray-50">Services</a>
+      <a href="#partner" class="block py-2 text-primary hover:bg-gray-50">Partner With Us</a>
+      <a href="#contact" class="block py-2 text-primary hover:bg-gray-50">Contact</a>
+      <button class="btn-primary w-full mt-4">Request Callback</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-28 pb-20 bg-primary text-white relative overflow-hidden">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-playfair">
+            Financial Expertise from Former Banking Insiders
+          </h1>
+          <p class="text-lg mb-8 opacity-90">
+            Exclusive loan consulting services for high-net-worth individuals and businesses seeking sophisticated financial solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <button class="btn-primary bg-white text-primary hover:bg-gray-100">Request Callback</button>
+            <button class="btn-outline border-white text-white hover:bg-white hover:text-primary">Learn More</button>
+          </div>
         </div>
-        <div class="card" tabindex="0">
-          <h3>White‑Label Support</h3>
-          <p>Co-branded collateral and seamless client communication.</p>
-        </div>
-        <div class="card" tabindex="0">
-          <h3>Dedicated Back‑Office</h3>
-          <p>Full assistance from documentation to disbursal—no hassles.</p>
-        </div>
-        <div class="card" tabindex="0">
-          <h3>Trusted Expertise</h3>
-          <p>Ex-bankers with ₹1000Cr+ handled, over 30 lender relationships.</p>
+        <div class="md:w-1/2 flex justify-center relative z-10">
+          <img src="logo-hero.png" alt="EBCG Logo Transparent" class="w-80 h-auto opacity-15" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section id="process" class="process-section">
-    <div class="container">
-      <h2>Our 3‑Step Partner Process</h2>
-      <ol class="process-steps">
-        <li><strong>1. Sign Up</strong> – Fill a quick partner-form below.</li>
-        <li><strong>2. Get Activation</strong> – Receive your unique partner code & branded support kit.</li>
-        <li><strong>3. Close & Earn</strong> – Refer & earn commissions on each ₹5Cr+ deal closed.</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Application Form -->
-  <section id="form" class="apply-section">
-    <div class="container">
-      <h2>Apply to Become a Partner</h2>
-      <form id="partnerForm" class="apply-form" autocomplete="off" onsubmit="submitForm(event)">
-        <input type="text" placeholder="Full Name" name="name" required>
-        <input type="email" placeholder="Email Address" name="email" required>
-        <input type="tel" placeholder="Phone Number" name="phone" required pattern="[0-9+\-() ]{9,17}">
-        <textarea name="notes" placeholder="Tell us about your network / organization (optional)"></textarea>
-        <button type="submit" class="btn">Submit Application</button>
-      </form>
-      <p id="formMsg" class="form-message" role="alert"></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Strategic Loan Advisory • <a href="#">Privacy &amp; Disclaimer</a></p>
-      <p>Connect:
-        <a href="#" aria-label="LinkedIn">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon">
-        </a>
-        <a href="#" aria-label="WhatsApp">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon">
-        </a>
-      </p>
-      <p class="ref-note">By Referral Only • Private Partner Network</p>
-    </div>
-  </footer>
   <script src="script.js"></script>
 </body>
 </html>
