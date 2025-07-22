@@ -6,7 +6,7 @@ mobileMenuButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('hidden');
 });
 
-// Smooth Scrolling for Anchor Links
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -14,11 +14,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: 'smooth'
-      });
+      // Smooth scroll to element minus offset for fixed nav height
+      const yOffset = -80;
+      const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
 
+      // Hide mobile menu on link click
       if (!mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.add('hidden');
       }
@@ -26,22 +27,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ScrollToContact (used by buttons)
+// Scroll to contact section (called by 'Learn More' buttons)
 function scrollToContact() {
-  const contact = document.getElementById("contact");
+  const contact = document.getElementById('contact');
   if (contact) {
-    contact.scrollIntoView({ behavior: "smooth" });
+    contact.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
-// Fade-in animation on scroll
+// Intersection Observer for fade-in scroll animations
 const faders = document.querySelectorAll('.scroll-fade');
-const fadeInOnScroll = new IntersectionObserver((entries) => {
+const fadeOptions = {
+  threshold: 0.1,
+};
+
+const fadeInOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.remove('opacity-0', 'translate-y-10');
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, fadeOptions);
 
 faders.forEach(el => fadeInOnScroll.observe(el));
+
