@@ -29,7 +29,6 @@
         <img src="assets/EBCG.png" alt="EBCG Logo" class="h-8 w-8 mr-2" />
         <span class="font-playfair">EBCG</span>
       </a>
-
       <div class="hidden md:flex items-center space-x-4">
         <a href="#home" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About Us</a>
@@ -38,7 +37,6 @@
         <a href="#contact" class="nav-link">Contact</a>
         <button class="btn-outline border text-primary hover:bg-gray-100 px-6 py-2">Request Callback</button>
       </div>
-
       <div class="md:hidden">
         <button id="mobile-menu-button" class="text-primary">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +45,6 @@
         </button>
       </div>
     </div>
-
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white w-full py-4 px-6 shadow-md">
       <a href="#home" class="block py-2 text-primary hover:bg-gray-50">Home</a>
@@ -79,6 +76,65 @@
           <img src="assets/EBCG.png" alt="EBCG Logo Transparent" class="w-80 h-auto opacity-40 rounded-xl shadow-xl mix-blend-soft-light" />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-white text-primary">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-4">About Us</h2>
+      <p class="text-lg max-w-2xl mx-auto">
+        EBCG is a team of seasoned ex-bankers and financial experts offering bespoke consulting services to high-net-worth clients and enterprises.
+        We are passionate about delivering real value through financial intelligence and proven industry expertise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-100 text-primary">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-8">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Loan Advisory</h3>
+          <p>Tailored loan structuring and negotiation for individuals and businesses.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Wealth Management</h3>
+          <p>Personalized strategies to help grow and protect your wealth long-term.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Business Consulting</h3>
+          <p>Financial planning and advisory services for SMEs and corporates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner With Us Section -->
+  <section id="partner" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-6">Partner With Us</h2>
+      <p class="text-lg max-w-2xl mx-auto mb-6">
+        Join hands with EBCG to elevate your business with proven financial insight and strategic collaborations. Let’s grow together.
+      </p>
+      <button class="btn-outline border-white text-white hover:bg-white hover:text-primary px-6 py-2">Become a Partner</button>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-100 text-primary">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-4">Contact Us</h2>
+      <p class="mb-6">Have questions or need a consultation? Reach out and we’ll get back to you soon.</p>
+      <form class="max-w-xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Full Name" class="p-3 border rounded" required>
+          <input type="email" placeholder="Email Address" class="p-3 border rounded" required>
+        </div>
+        <textarea placeholder="Your Message" class="p-3 border rounded w-full mt-4" rows="4" required></textarea>
+        <button type="submit" class="btn-outline mt-4 border text-primary hover:bg-gray-100 px-6 py-2">Send Message</button>
+      </form>
     </div>
   </section>
 
