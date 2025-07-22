@@ -23,107 +23,163 @@
       position: sticky;
       top: 100%;
     }
+    .service-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-lato">
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white shadow-md z-50 py-4">
-    <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-      <a href="#home" class="text-2xl font-bold text-primary flex items-center">
-        <img src="assets/EBCG.png" alt="EBCG Logo" class="h-8 w-8 mr-2" />
-        <span class="font-playfair">EBCG</span>
-      </a>
-      <div class="hidden md:flex items-center space-x-4">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About Us</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#partner" class="nav-link">Partner With Us</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <button class="btn-outline border text-primary hover:bg-gray-100 px-6 py-2">Request Callback</button>
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="assets/logo-navbar.png" alt="EBCG Logo" class="h-10 w-auto">
+        <span class="text-xl font-bold text-primary">EBCG</span>
       </div>
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+      <div class="space-x-4">
+        <a href="#about" class="hover:text-primary">About</a>
+        <a href="#services" class="hover:text-primary">Services</a>
+        <a href="#contact" class="hover:text-primary">Contact</a>
       </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white w-full py-4 px-6 shadow-md">
-      <a href="#home" class="block py-2 text-primary hover:bg-gray-50">Home</a>
-      <a href="#about" class="block py-2 text-primary hover:bg-gray-50">About Us</a>
-      <a href="#services" class="block py-2 text-primary hover:bg-gray-50">Services</a>
-      <a href="#partner" class="block py-2 text-primary hover:bg-gray-50">Partner With Us</a>
-      <a href="#contact" class="block py-2 text-primary hover:bg-gray-50">Contact</a>
-      <button class="btn-outline w-full mt-4 border text-primary hover:bg-gray-100 px-6 py-2">Request Callback</button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="pt-28 pb-20 bg-primary text-white relative overflow-hidden">
-    <div class="container mx-auto px-4 md:px-6">
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-playfair">
-            Financial Expertise from Former Banking Insiders
-          </h1>
-          <p class="text-lg mb-8 opacity-90">
-            Exclusive loan consulting services for high-net-worth individuals and businesses seeking sophisticated financial solutions.
-          </p>
-          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <button class="btn-outline border-white text-white hover:bg-white hover:text-primary px-6 py-2">Request Callback</button>
-            <button class="btn-outline border-white text-white hover:bg-white hover:text-primary px-6 py-2">Learn More</button>
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center relative z-10">
-          <img src="assets/EBCG.png" alt="EBCG Logo Transparent" class="w-80 h-auto opacity-40 rounded-xl shadow-xl mix-blend-soft-light" />
-        </div>
+  <section class="relative bg-gradient-to-r from-[#0A3622] to-[#1c2230] text-white py-20 px-6">
+    <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">Ex Banker Consulting Group</h1>
+        <p class="mt-4 text-lg md:text-xl">Tailored Financial Solutions for High-Net-Worth Individuals and Businesses</p>
+        <a href="#contact" class="inline-block mt-6 px-6 py-3 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-primary transition">Request Callback</a>
+      </div>
+      <div class="relative">
+        <img src="assets/logo-hero.png" alt="EBCG Hero Logo" class="opacity-70 max-w-full mx-auto">
       </div>
     </div>
   </section>
 
-  <!-- Existing Sections (About, Services, Partner, Contact) -->
-
-  <!-- Enhanced Footer -->
-  <footer class="bg-primary text-white pt-10 pb-6">
-    <div class="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="text-xl font-bold mb-4">EBCG</h3>
-        <p class="text-sm opacity-70">Elite financial consulting services powered by ex-banking professionals.</p>
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-primary">About Us</h2>
+        <p class="max-w-2xl mx-auto mt-4 text-lg">Ex Banker Consulting Group was founded by a team of former senior banking executives with over 50 years of combined experience in the financial sector. We leverage our insider knowledge and extensive network to secure optimal financing solutions for our discerning clientele.</p>
       </div>
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#about" class="hover:underline">About Us</a></li>
-          <li><a href="#services" class="hover:underline">Services</a></li>
-          <li><a href="#partner" class="hover:underline">Partner With Us</a></li>
-          <li><a href="#contact" class="hover:underline">Contact</a></li>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <ul class="space-y-4">
+          <li><strong>Financial Expertise:</strong> Former executives from top-tier financial institutions with insider knowledge.</li>
+          <li><strong>Trusted Advisors:</strong> Confidential consultation with the highest level of discretion and integrity.</li>
+          <li><strong>Efficient Solutions:</strong> Streamlined processes that save time and secure optimal terms.</li>
+          <li><strong>Exclusive Network:</strong> Access to decision-makers and specialized lending programs.</li>
         </ul>
       </div>
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Follow Us</h4>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:opacity-75"><img src="assets/facebook.svg" alt="Facebook" class="h-6"></a>
-          <a href="#" class="hover:opacity-75"><img src="assets/linkedin.svg" alt="LinkedIn" class="h-6"></a>
-          <a href="#" class="hover:opacity-75"><img src="assets/twitter.svg" alt="Twitter" class="h-6"></a>
-        </div>
-        <div class="mt-4">
-          <a href="#" class="text-xs underline mr-4">Privacy Policy</a>
-          <a href="#" class="text-xs underline">Terms of Use</a>
-        </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-[#F8F5F0]">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-[#0A3622] inline-block">Our Services</h2>
+        <p class="max-w-2xl mx-auto mt-4">We provide bespoke financial consulting services tailored to the unique needs of high-net-worth individuals and businesses.</p>
       </div>
-      <div>
-        <h4 class="text-lg font-semibold mb-2">Newsletter</h4>
-        <form class="flex flex-col">
-          <input type="email" placeholder="Your email" class="p-2 rounded text-primary" required>
-          <button type="submit" class="mt-2 bg-white text-primary py-2 rounded hover:bg-gray-100">Subscribe</button>
-        </form>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="service-card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Commercial Real Estate Financing</h3>
+          <p class="mb-4">Secure optimal financing terms for commercial property acquisitions, developments, and refinancing.</p>
+          <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
+            <li>Competitive rates</li>
+            <li>Flexible terms</li>
+            <li>Expedited approvals</li>
+          </ul>
+          <button onclick="scrollToContact()" class="text-primary font-semibold underline hover:no-underline">Learn More</button>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Private Banking Solutions</h3>
+          <p class="mb-4">Exclusive access to sophisticated banking products and services typically reserved for ultra-high-net-worth clients.</p>
+          <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
+            <li>Tailored lending</li>
+            <li>Asset-based financing</li>
+            <li>Wealth management</li>
+          </ul>
+          <button onclick="scrollToContact()" class="text-primary font-semibold underline hover:no-underline">Learn More</button>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Business Acquisition Financing</h3>
+          <p class="mb-4">Strategic financing solutions for mergers, acquisitions, and business expansion opportunities.</p>
+          <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
+            <li>Structured financing</li>
+            <li>Mezzanine debt</li>
+            <li>Private equity</li>
+          </ul>
+          <button onclick="scrollToContact()" class="text-primary font-semibold underline hover:no-underline">Learn More</button>
+        </div>
+        <!-- Add remaining service cards similarly -->
       </div>
     </div>
-    <div class="mt-8 text-center text-sm opacity-60">© 2025 EBCG. All rights reserved.</div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-primary">Get in Touch</h2>
+        <p class="max-w-2xl mx-auto mt-4 text-lg">Connect with us for a confidential consultation and learn how we can support your financial goals.</p>
+      </div>
+      <form class="max-w-3xl mx-auto space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" placeholder="Your Name" class="border border-gray-300 rounded-md px-4 py-3 w-full" required />
+          <input type="email" placeholder="Email Address" class="border border-gray-300 rounded-md px-4 py-3 w-full" required />
+        </div>
+        <textarea placeholder="How can we help you?" rows="5" class="border border-gray-300 rounded-md px-4 py-3 w-full" required></textarea>
+        <button type="submit" class="bg-[#0A3622] text-white px-6 py-3 rounded-md hover:bg-[#144c34] transition">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1c2230] text-white py-10">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="text-xl font-bold mb-4">EBCG</h4>
+          <p>Ex Banker Consulting Group provides high-touch financial consulting for HNIs, family offices, and businesses seeking elite funding solutions.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="hover:underline">About Us</a></li>
+            <li><a href="#services" class="hover:underline">Services</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold mb-4">Newsletter</h4>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 text-black rounded-md" required />
+            <button type="submit" class="bg-[#0A3622] px-4 py-2 rounded-md hover:bg-green-900 transition">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+        <p>&copy; 2025 EBCG. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+          <a href="#" class="hover:text-gray-300">Terms of Use</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    function scrollToContact() {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
