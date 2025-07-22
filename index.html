@@ -10,13 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800 font-lato">
+<body class="bg-[#FAF9F6] text-[#1c1c1e] font-lato">
   <!-- Navigation -->
   <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
         <img src="./assets/EBCG.png" alt="EBCG Logo" class="h-10 w-auto object-contain" />
-        <span class="text-xl font-bold text-[#222433]">EBCG</span>
+        <span class="text-xl font-bold text-[#222433] font-playfair">EBCG</span>
       </div>
       <div class="hidden md:flex space-x-6 text-[#222433] font-medium">
         <a href="#about" class="hover:text-[#B4955C] transition">About Us</a>
@@ -35,17 +35,18 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-r from-[#0A1E35] to-[#1c2230] text-white py-20 px-6">
-    <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-bold leading-tight">Financial Expertise from Former Banking Insiders</h1>
-        <p class="mt-4 text-lg md:text-xl">Exclusive loan consulting services for high-net-worth individuals and businesses seeking sophisticated financial solutions.</p>
-        <a href="#contact" class="inline-block mt-6 px-6 py-3 border border-white text-white font-semibold rounded-md hover:bg-white hover:text-primary transition">Request Callback</a>
+  <section class="relative bg-gradient-to-r from-[#222433] to-[#2E2F45] text-white py-24 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10">
+      <div class="animate-fade-in-up">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight font-playfair">Financial Expertise from Banking Insiders</h1>
+        <p class="mt-6 text-lg md:text-xl text-[#f0f0f0]">Loan consulting services crafted for high-net-worth individuals and businesses seeking elite financial solutions.</p>
+        <a href="#contact" class="btn-primary mt-6 inline-block">Request Callback</a>
       </div>
-      <div class="relative">
-        <img src="./assets/EBCG.png" alt="EBCG Hero Logo" class="opacity-90 max-w-xs mx-auto object-contain" />
+      <div class="text-center md:text-right animate-fade-in-up delay-300">
+        <img src="./assets/EBCG.png" alt="EBCG Hero Logo" class="illustration w-64 h-auto mx-auto md:ml-auto" />
       </div>
     </div>
+    <div class="absolute inset-0 bg-[url('./assets/pattern.svg')] opacity-10 bg-cover"></div>
   </section>
 
   <!-- About Us Section -->
@@ -149,17 +150,17 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#1c2230] text-white py-10">
-    <div class="container mx-auto px-4 md:px-6">
+<!-- Footer -->
+  <footer class="bg-[#222433] text-white py-10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <div>
           <h4 class="text-xl font-bold mb-4">EBCG</h4>
-          <p>Ex Banker Consulting Group provides high-touch financial consulting for HNIs, family offices, and businesses seeking elite funding solutions.</p>
+          <p class="text-sm">Ex Banker Consulting Group offers personalized financial consulting for HNIs, family offices, and enterprises.</p>
         </div>
         <div>
           <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-          <ul class="space-y-2">
+          <ul class="space-y-2 text-sm">
             <li><a href="#about" class="hover:underline">About Us</a></li>
             <li><a href="#services" class="hover:underline">Services</a></li>
             <li><a href="#contact" class="hover:underline">Contact</a></li>
@@ -169,11 +170,11 @@
           <h4 class="text-xl font-bold mb-4">Newsletter</h4>
           <form class="space-y-4">
             <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 text-black rounded-md" required />
-            <button type="submit" class="bg-[#0A3622] px-4 py-2 rounded-md hover:bg-green-900 transition">Subscribe</button>
+            <button type="submit" class="bg-[#B4955C] text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition">Subscribe</button>
           </form>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-600 pt-6 text-sm">
         <p>&copy; 2025 EBCG. All rights reserved.</p>
         <div class="flex space-x-4 mt-4 md:mt-0">
           <a href="#" class="hover:text-gray-300">Privacy Policy</a>
@@ -183,11 +184,6 @@
     </div>
   </footer>
 
-  <script>
-    function scrollToContact() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
