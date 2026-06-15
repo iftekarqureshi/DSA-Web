@@ -3,171 +3,327 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us – EBCG | Loan Consulting India</title>
-  <meta name="description" content="Contact EBCG for a free loan consulting consultation. Reach our ex-banker advisors in Mumbai by phone, WhatsApp, or enquiry form. Pan-India service." />
+  <title>Contact EBCG – Free Consultation</title>
+
+  <meta name="description" content="Book your free 30-minute consultation with EBCG. Expert advisors ready to discuss your financial needs." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ebcg.in/contact.html" />
-  <meta property="og:title" content="Contact EBCG – Ex Banker Consulting Group" />
-  <meta property="og:description" content="Get in touch with EBCG for expert loan consulting. Free initial consultation, confidential service." />
-  <meta property="og:image" content="https://ebcg.in/assets/EBCG.png" />
-  <meta property="og:url" content="https://ebcg.in/contact.html" />
-  <meta property="og:type" content="website" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--divider);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 0.25rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .checkbox-item label {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-details p {
+      font-size: 0.95rem;
+    }
+
+    .contact-details a {
+      color: var(--primary);
+    }
+  </style>
 </head>
 <body>
+<nav aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="/" class="logo-group">
+      <img src="assets/EBCG.png" alt="EBCG Logo" class="logo-img" />
+      <span>EBCG</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link" data-path="/">Home</a>
+      <a href="/about.html" class="nav-link" data-path="/about.html">About</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn">Services</button>
+        <div class="dropdown-menu" role="menu">
+          <a href="/services/home-loan-consulting.html">Home Loan Consulting</a>
+          <a href="/services/business-loan-consulting.html">Business Loan Consulting</a>
+          <a href="/services/commercial-real-estate.html">Commercial Real Estate</a>
+          <a href="/services/private-banking.html">Private Banking</a>
+        </div>
+      </div>
+      <a href="/contact.html" class="nav-link" data-path="/contact.html" style="color:var(--primary);">Contact</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobile-menu-button" aria-label="Toggle menu">☰</button>
+  </div>
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="/" class="mobile-link" data-path="/">Home</a>
+    <a href="/about.html" class="mobile-link" data-path="/about.html">About</a>
+    <span class="mobile-link" style="border:none;color:var(--primary);font-size:0.8rem;padding-top:1rem;">Services</span>
+    <div class="mobile-submenu">
+      <a href="/services/home-loan-consulting.html" class="mobile-link">Home Loan Consulting</a>
+      <a href="/services/business-loan-consulting.html" class="mobile-link">Business Loan Consulting</a>
+      <a href="/services/commercial-real-estate.html" class="mobile-link">Commercial Real Estate</a>
+      <a href="/services/private-banking.html" class="mobile-link">Private Banking</a>
+    </div>
+    <a href="/contact.html" class="mobile-link" data-path="/contact.html">Contact</a>
+  </div>
+</nav>
 
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="/" class="logo-group">
-        <img src="assets/EBCG.png" alt="EBCG Logo" class="logo-img" width="44" height="44" />
-        <span class="logo-text">Ex Banker's<br>Consulting Group</span>
-      </a>
-      <div class="nav-links">
-        <a href="/" class="nav-link" data-path="/">Home</a>
-        <a href="/about.html" class="nav-link" data-path="/about.html">About</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-btn" aria-haspopup="true">Services ▾</button>
-          <div class="dropdown-menu" role="menu">
-            <a href="/services/home-loan-consulting.html">Home Loan Consulting</a>
-            <a href="/services/business-loan-consulting.html">Business Loan Consulting</a>
-            <a href="/services/commercial-real-estate.html">Commercial Real Estate</a>
-            <a href="/services/private-banking.html">Private Banking</a>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-crumb">Get in Touch</span>
+    <h1 class="page-hero-h">Let's Talk About Your Funding</h1>
+    <p class="page-hero-p">Book a free 30-minute consultation with one of our senior advisors. No obligations. No pressure. Just honest guidance.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap: 4rem;">
+      <div>
+        <h2 style="margin-bottom: 2rem;">Quick Contact Info</h2>
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p><a href="mailto:hello@ebcg.in">hello@ebcg.in</a></p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Response within 2 hours</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Mon–Fri, 9 AM–6 PM IST</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <p><a href="https://wa.me/919876543210" target="_blank">Chat with us</a></p>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Instant response available</p>
+            </div>
           </div>
         </div>
-        <a href="/contact.html" class="nav-link" data-path="/contact.html">Contact</a>
       </div>
-      <button id="mobile-menu-button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu">
-      <a href="/" class="mobile-link" data-path="/">Home</a>
-      <a href="/about.html" class="mobile-link" data-path="/about.html">About</a>
-      <span class="mobile-link" style="border:none;color:var(--gold);font-size:0.8rem;padding-top:1rem;">Services</span>
-      <div class="mobile-submenu">
-        <a href="/services/home-loan-consulting.html" class="mobile-link">Home Loan Consulting</a>
-        <a href="/services/business-loan-consulting.html" class="mobile-link">Business Loan Consulting</a>
-        <a href="/services/commercial-real-estate.html" class="mobile-link">Commercial Real Estate</a>
-        <a href="/services/private-banking.html" class="mobile-link">Private Banking</a>
-      </div>
-      <a href="/contact.html" class="mobile-link" data-path="/contact.html">Contact</a>
-    </div>
-  </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>Book a free, confidential consultation with our ex-banker advisors.</p>
-    </div>
-  </section>
-
-  <section class="content-page">
-    <div class="container">
-      <div class="content-sidebar-layout">
-        <div>
-          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-thank-you="/thank-you.html">
-            <div class="form-message" role="alert"></div>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name" />
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="you@example.com" />
-              </div>
+      <div class="card" style="padding: 2rem;">
+        <h3 style="margin-bottom: 1.5rem;">Book Your Consultation</h3>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number</label>
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
               <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
             </div>
             <div class="form-group">
-              <label for="service">Service Required</label>
+              <label for="service">Service Interested In *</label>
               <select id="service" name="service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="Home Loan Consulting">Home Loan Consulting</option>
-                <option value="Business Loan Consulting">Business Loan Consulting</option>
-                <option value="Commercial Real Estate">Commercial Real Estate</option>
-                <option value="Private Banking">Private Banking</option>
-                <option value="General Inquiry">General Inquiry</option>
+                <option value="">Select a service</option>
+                <option value="home-loan">Home Loan Consulting</option>
+                <option value="business-loan">Business Loan Consulting</option>
+                <option value="commercial-re">Commercial Real Estate</option>
+                <option value="private-banking">Private Banking</option>
               </select>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Tell us about your financing needs..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your needs</label>
+            <textarea id="message" name="message" placeholder="Brief description of your financing needs..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="terms" name="terms" required />
+                <label for="terms">I agree to be contacted by EBCG for consultation</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="privacy" name="privacy" required />
+                <label for="privacy">I accept the <a href="/privacy-policy.html" style="color: var(--primary);">Privacy Policy</a></label>
+              </div>
             </div>
-            <div class="form-honeypot" aria-hidden="true">
-              <label for="_gotcha">Leave blank</label>
-              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
-            </div>
-            <div class="form-submit">
-              <button type="submit" class="btn btn-primary btn-block">
-                <span class="btn-text">Submit Enquiry</span>
-                <span class="spinner" aria-hidden="true"></span>
-              </button>
-            </div>
-          </form>
-        </div>
-        <aside class="sidebar-cta">
-          <h3>Reach Us Directly</h3>
-          <p>Prefer to talk? Our advisors are available Monday–Saturday, 9 AM – 6 PM IST.</p>
-          <a href="https://wa.me/919876543210" class="btn btn-whatsapp btn-block" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-          <a href="tel:+919876543210" class="btn btn-outline btn-block">+91 98765 43210</a>
-          <p style="margin-top:1.5rem;font-size:0.85rem;color:var(--text-muted);">
-            <strong style="color:var(--navy);">Office:</strong><br>
-            Bandra Kurla Complex<br>
-            Mumbai, Maharashtra 400051<br>
-            India
-          </p>
-        </aside>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+          <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">We typically respond within 2 hours during business hours.</p>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h4>Ex Banker Consulting Group</h4>
-        <p>Exclusive loan consulting and private banking advisory from former senior banking insiders. Serving clients across India from our Mumbai headquarters.</p>
+<section class="section" style="background: rgba(0, 217, 255, 0.05); text-align: center;">
+  <div class="container">
+    <h2 style="margin-bottom: 1rem;">Frequently Asked Questions</h2>
+    <p style="color: var(--text-muted-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Got questions before booking? We've compiled answers to the most common ones.</p>
+
+    <div class="grid grid-2" style="text-align: left;">
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">How long does a consultation take?</h3>
+        <p style="font-size: 0.95rem;">Our initial consultation is 30 minutes, completely free. If we're a good fit, we'll discuss next steps.</p>
       </div>
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">What's the typical loan approval timeline?</h3>
+        <p style="font-size: 0.95rem;">With our help, most loans are approved within 15–30 days. Complex cases may take longer, but we always keep you updated.</p>
+      </div>
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Do you charge upfront fees?</h3>
+        <p style="font-size: 0.95rem;">No hidden fees. Our charges are transparent and discussed upfront. You know exactly what you're paying for.</p>
+      </div>
+      <div class="card">
+        <h3 style="color: var(--primary); margin-bottom: 0.75rem;">Can you help if I have a poor credit score?</h3>
+        <p style="font-size: 0.95rem;">We explore all options. Even if your credit isn't perfect, there may be banks or structures that work for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="padding: 3rem 2rem;">
+    <div class="footer-content">
       <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-        </ul>
+        <h4 style="color: var(--text-light); margin: 0 0 1rem;">EBCG</h4>
+        <p style="color: var(--text-muted-light); max-width: 280px;">Elite Loan Consulting & Private Banking Solutions. Former senior bankers. Direct bank relationships. Your advantage.</p>
       </div>
       <div>
         <h4>Services</h4>
-        <ul>
-          <li><a href="/services/home-loan-consulting.html">Home Loan Consulting</a></li>
-          <li><a href="/services/business-loan-consulting.html">Business Loan Consulting</a></li>
-          <li><a href="/services/commercial-real-estate.html">Commercial Real Estate</a></li>
-          <li><a href="/services/private-banking.html">Private Banking</a></li>
-        </ul>
+        <a href="/services/home-loan-consulting.html">Home Loans</a>
+        <a href="/services/business-loan-consulting.html">Business Loans</a>
+        <a href="/services/commercial-real-estate.html">Commercial Real Estate</a>
+        <a href="/services/private-banking.html">Private Banking</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
       </div>
       <div>
         <h4>Connect</h4>
-        <ul>
-          <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="https://www.linkedin.com/company/ebcg" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://twitter.com/ebcg" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="https://www.instagram.com/ebcg" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
+        <a href="https://wa.me/919876543210" target="_blank">WhatsApp</a>
+        <a href="mailto:hello@ebcg.in">Email</a>
+        <a href="https://linkedin.com/company/ebcg" target="_blank">LinkedIn</a>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 Ex Banker Consulting Group. All rights reserved.</p>
-      <div>
-        <a href="/privacy-policy.html">Privacy Policy</a>
-        <a href="/contact.html">Contact</a>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2026 EBCG. All rights reserved.</span>
+      <a href="/privacy-policy.html">Privacy Policy</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

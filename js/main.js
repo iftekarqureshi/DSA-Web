@@ -1,170 +1,140 @@
-(function () {
-  'use strict';
+/**
+ * EBCG – Main JavaScript
+ * Modern interactive functionality for navigation and page interactions
+ */
 
-  const FORMSPREE_ID = 'YOUR_FORM_ID';
-
-  /* Mobile Menu */
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      const expanded = mobileMenu.classList.contains('open');
-      mobileMenuBtn.setAttribute('aria-expanded', expanded);
-    });
-
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-      });
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('active');
+      const isActive = mobileMenu.classList.contains('active');
+      this.textContent = isActive ? '✕' : '☰';
     });
   }
 
-  /* Services dropdown (mobile tap) */
-  const dropdownBtn = document.querySelector('.nav-dropdown-btn');
-  const dropdown = document.querySelector('.nav-dropdown');
-
-  if (dropdownBtn && dropdown) {
-    dropdownBtn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        dropdown.classList.toggle('open');
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('open');
-      }
-    });
-  }
-
-  /* Smooth scroll for anchor links */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-
+  // Close mobile menu when clicking links
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
       if (mobileMenu) {
-        mobileMenu.classList.remove('open');
-        if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('active');
+        if (mobileMenuBtn) mobileMenuBtn.textContent = '☰';
       }
     });
   });
 
-  /* FAQ Accordion */
-  document.querySelectorAll('.faq-question').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-
-      document.querySelectorAll('.faq-item.open').forEach((openItem) => {
-        openItem.classList.remove('open');
-        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#') {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   });
 
-  /* Intersection Observer scroll-fade */
-  const faders = document.querySelectorAll('.scroll-fade');
-  if (faders.length && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
-    faders.forEach((el) => observer.observe(el));
-  } else {
-    faders.forEach((el) => el.classList.add('visible'));
+  // Add animation classes on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards and sections
+  document.querySelectorAll('.card, .section').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Form interaction
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      // Default form submission handled by Formspree
+      // You can add custom analytics tracking here
+      console.log('Form submitted');
+    });
   }
 
-  /* Active nav link via data-path */
-  const currentPath = window.location.pathname.replace(/\/index\.html$/, '/') || '/';
-  document.querySelectorAll('[data-path]').forEach((link) => {
-    const linkPath = link.getAttribute('data-path');
-    if (linkPath === currentPath || (currentPath !== '/' && linkPath !== '/' && currentPath.includes(linkPath))) {
-      link.classList.add('active');
+  // Scroll to top functionality
+  const scrollButton = document.createElement('button');
+  scrollButton.innerHTML = '↑';
+  scrollButton.style.cssText = `
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+  `;
+
+  document.body.appendChild(scrollButton);
+
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollButton.style.display = 'flex';
+      scrollButton.style.alignItems = 'center';
+      scrollButton.style.justifyContent = 'center';
+    } else {
+      scrollButton.style.display = 'none';
     }
   });
 
-  /* Form handler */
-  document.querySelectorAll('.contact-form').forEach((form) => {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const honeypot = form.querySelector('[name="_gotcha"]');
-      if (honeypot && honeypot.value) return;
-
-      const submitBtn = form.querySelector('[type="submit"]');
-      const submitWrap = submitBtn ? submitBtn.closest('.form-submit') : null;
-      const messageEl = form.querySelector('.form-message');
-      const thankYouUrl = form.getAttribute('data-thank-you');
-
-      if (messageEl) {
-        messageEl.className = 'form-message';
-        messageEl.textContent = '';
-      }
-
-      if (submitWrap) submitWrap.classList.add('loading');
-      if (submitBtn) submitBtn.disabled = true;
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          body: formData,
-          headers: { Accept: 'application/json' },
-        });
-
-        if (response.ok) {
-          if (thankYouUrl) {
-            window.location.href = thankYouUrl;
-            return;
-          }
-          if (messageEl) {
-            messageEl.textContent = 'Thank you! We will be in touch shortly.';
-            messageEl.classList.add('success');
-          }
-          form.reset();
-        } else {
-          const data = await response.json().catch(() => ({}));
-          const errMsg = data.error || 'Something went wrong. Please try again or call us directly.';
-          if (messageEl) {
-            messageEl.textContent = errMsg;
-            messageEl.classList.add('error');
-          }
-        }
-      } catch {
-        if (messageEl) {
-          messageEl.textContent = 'Network error. Please check your connection and try again.';
-          messageEl.classList.add('error');
-        }
-      } finally {
-        if (submitWrap) submitWrap.classList.remove('loading');
-        if (submitBtn) submitBtn.disabled = false;
-      }
-    });
+  scrollButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-})();
+
+  scrollButton.addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.1)';
+  });
+
+  scrollButton.addEventListener('mouseout', function() {
+    this.style.transform = 'scale(1)';
+  });
+});
+
+// Page transition effect (optional)
+window.addEventListener('beforeunload', function() {
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 0.3s ease';
+});
+
+// Utility functions
+function trackEvent(eventName, eventData) {
+  console.log('Event:', eventName, eventData);
+  // Add your analytics tracking here
+}
+
+function isEmailValid(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function formatPhoneNumber(phone) {
+  const cleaned = phone.replace(/\D/g, '');
+  return cleaned.length === 10 ? `+91 ${cleaned}` : phone;
+}
