@@ -376,8 +376,44 @@ nav {
   border-bottom: 1px solid var(--divider);
   padding: 2rem;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
+  max-height: calc(100vh - var(--nav-height));
+  overflow-y: auto;
+  z-index: 999;
 }
+
+.mobile-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: block;
+}
+
+.mobile-link:hover {
+  color: var(--primary);
+}
+
+.mobile-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid rgba(197, 163, 104, 0.2);
+  margin-top: -0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-submenu .mobile-link {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.mobile-submenu .mobile-link:hover {
+  color: var(--primary);
+}
+
 
 /* ── HERO SECTION ── */
 .page-hero {
