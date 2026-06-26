@@ -743,7 +743,45 @@ footer {
   }
   
   .card {
-    padding: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  /* EMI Calculator Mobile Optimizations */
+  .calculator-container {
+    padding: 1.25rem;
+    margin-top: 2rem;
+  }
+  
+  .calculator-grid {
+    gap: 1.5rem;
+  }
+  
+  .calc-slider-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .calc-label {
+    font-size: 0.85rem;
+  }
+  
+  .calc-val {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.5rem;
+  }
+  
+  .calc-results {
+    padding: 1.25rem;
+  }
+  
+  .result-val {
+    font-size: 1.65rem;
+  }
+
+  .result-label {
+    font-size: 0.8rem;
   }
 }
 
